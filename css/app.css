@@ -76,7 +76,7 @@ h1 > span {
 }
 .keyboardContainer {
     width: 80%;
-    height: 50%;
+    height: 45%;
     margin: auto;
     background-color: #111;
 }
@@ -86,7 +86,7 @@ h1 > span {
 }
 .instructions {
     font-family: sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #111;
     text-align: center;
     text-shadow: 0px 0px 3px #fff;
