@@ -7,68 +7,69 @@ window.addEventListener("load", function() {
     
     //keyClicked function which handles the key clicked on the keyboard and passes the respective notes to other functions
     function keyClicked(event) {        
-        //Clicked A for major C note
-        if (event.keyCode == 65 && !event.shiftKey) {
+        //Clicked S for major C note
+        if (event.keyCode == 83) {
             notePressed("c");
         }
         
-        //Clicked A with Shift for sharp C note
-        if (event.keyCode == 65 && event.shiftKey) {
+        //Clicked E for sharp C note
+        if (event.keyCode == 69) {
             notePressed("cs");
         }
         
-        //Clicked S for major D note
-        if (event.keyCode == 83 && !event.shiftKey) {
+        //Clicked D for major D note
+        if (event.keyCode == 68) {
             notePressed("d");
         }
         
-        //Clicked S with Shift for sharp D note
-        if (event.keyCode == 83 && event.shiftKey) {
+        //Clicked R for sharp D note
+        if (event.keyCode == 82) {
             notePressed("ds");
         }
         
-        //Clicked D for major E note
-        if (event.keyCode == 68 && !event.shiftKey) {
+        //Clicked F for major E note
+        if (event.keyCode == 70) {
             notePressed("e");
         }
         
-        //Clicked F for major F note
-        if (event.keyCode == 70 && !event.shiftKey) {
+        //Clicked G for major F note
+        if (event.keyCode == 71) {
             notePressed("f");
         }
         
-        //Clicked F with Shift for sharp F note
-        if (event.keyCode == 70 && event.shiftKey) {
+        //Clicked Y for sharp F note
+        if (event.keyCode == 89) {
             notePressed("fs");
         }
         
         //Clicked H for major G note
-        if (event.keyCode == 72 && !event.shiftKey) {
+        if (event.keyCode == 72) {
             notePressed("g");
         }
         
-        //Clicked H with Shift for sharp G note
-        if (event.keyCode == 72 && event.shiftKey) {
+        //Clicked U for sharp G note
+        if (event.keyCode == 85) {
             notePressed("gs");
         }
         
         //Clicked J for major A note
-        if (event.keyCode == 74 && !event.shiftKey) {
+        if (event.keyCode == 74) {
             notePressed("a");
         }
         
-        //Clicked J with Shift for sharp A note
-        if (event.keyCode == 74 && event.shiftKey) {
+        //Clicked I for sharp A note
+        if (event.keyCode == 73) {
             notePressed("as");
         }
         
         //Clicked K for major B note
-        if (event.keyCode == 75 && !event.shiftKey) {
+        if (event.keyCode == 75) {
             notePressed("b");
         }
         
         //Clicked Space for rest
         if (event.keyCode == 32) {
+            event.preventDefault();
             notePressed("space");
         }
     }
