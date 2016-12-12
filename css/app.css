@@ -28,7 +28,7 @@ hr {
 .piano {
     position: relative;
     width: 75%;
-    height: 50%;
+    height: 60%;
     margin: 2rem auto;
     cursor: pointer;
 }
@@ -50,7 +50,7 @@ hr {
 }
 .sharp-key {
     background-color: #222;
-    width: 4.5%;
+    width: 5%;
     height: 75%;
     z-index: 9999;
     position: absolute;
@@ -71,34 +71,34 @@ hr {
     border-bottom-right-radius: 6px;   
 }
 #note2s {
-    margin-left: 4.9%;  
+    margin-left: 4.6%;  
 }
 #note4s {
-    margin-left: 12.1%;  
+    margin-left: 11.8%;  
 }
 #note7s {
-    margin-left: 26.3%; 
+    margin-left: 26.1%; 
 }
 #note9s {
-    margin-left: 33.5%;  
+    margin-left: 33.25%;  
 }
 #note11s {
-    margin-left: 40.6%;  
+    margin-left: 40.4%;  
 }
 #note2o {
-    margin-left: 54.9%;  
+    margin-left: 54.6%;  
 }
 #note4o {
-    margin-left: 62.1%;  
+    margin-left: 61.8%;  
 }
 #note7o {
-    margin-left: 76.3%;  
+    margin-left: 76.1%;  
 }
 #note9o {
-    margin-left: 83.5%;  
+    margin-left: 83.25%;  
 }
 #note11o {
-    margin-left: 90.6%;  
+    margin-left: 90.3%;  
 }
 footer {
     padding: 0.9375em;
