@@ -3,75 +3,97 @@ window.addEventListener("load", function() {
     var sound = new Howl({});
     
     //Listens for keypresses within the window and calls the keyClicked function
-    window.addEventListener("keydown", keyClicked);
+    window.addEventListener("click", keyClicked);
+    //Listens for any touch event on the piano keys and calls the keyClicked function
+    document.getElementById("piano").addEventListener("touchstart", keyClicked);
     
     //keyClicked function which handles the key clicked on the keyboard and passes the respective notes to other functions
-    function keyClicked(event) {        
-        //Clicked S for major C note
-        if (event.keyCode == 83) {
-            notePressed("c");
-        }
+    function keyClicked(event) {
+        //For test purpose
+        //console.log("Clicked note : " + event.target.id);
         
-        //Clicked E for sharp C note
-        if (event.keyCode == 69) {
-            notePressed("cs");
+        //Touch or click check function for each individual note
+        if (event.target.id == "note1s") {
+            notePressed("note1s");
         }
-        
-        //Clicked D for major D note
-        if (event.keyCode == 68) {
-            notePressed("d");
+        if (event.target.id == "note2s") {
+            notePressed("note2s");
         }
-        
-        //Clicked R for sharp D note
-        if (event.keyCode == 82) {
-            notePressed("ds");
+        if (event.target.id == "note3s") {
+            notePressed("note3s");
         }
-        
-        //Clicked F for major E note
-        if (event.keyCode == 70) {
-            notePressed("e");
+        if (event.target.id == "note4s") {
+            notePressed("note4s");
         }
-        
-        //Clicked G for major F note
-        if (event.keyCode == 71) {
-            notePressed("f");
+        if (event.target.id == "note5s") {
+            notePressed("note5s");
         }
-        
-        //Clicked Y for sharp F note
-        if (event.keyCode == 89) {
-            notePressed("fs");
+        if (event.target.id == "note6s") {
+            notePressed("note6s");
         }
-        
-        //Clicked H for major G note
-        if (event.keyCode == 72) {
-            notePressed("g");
+        if (event.target.id == "note7s") {
+            notePressed("note7s");
         }
-        
-        //Clicked U for sharp G note
-        if (event.keyCode == 85) {
-            notePressed("gs");
+        if (event.target.id == "note8s") {
+            notePressed("note8s");
         }
-        
-        //Clicked J for major A note
-        if (event.keyCode == 74) {
-            notePressed("a");
+        if (event.target.id == "note9s") {
+            notePressed("note9s");
         }
-        
-        //Clicked I for sharp A note
-        if (event.keyCode == 73) {
-            notePressed("as");
+        if (event.target.id == "note10s") {
+            notePressed("note10s");
         }
-        
-        //Clicked K for major B note
-        if (event.keyCode == 75) {
-            notePressed("b");
+        if (event.target.id == "note11s") {
+            notePressed("note11s");
+        }
+        if (event.target.id == "note12s") {
+            notePressed("note12s");
+        }
+        if (event.target.id == "note1o") {
+            notePressed("note1o");
+        }
+        if (event.target.id == "note2o") {
+            notePressed("note2o");
+        }
+        if (event.target.id == "note3o") {
+            notePressed("note3o");
+        }
+        if (event.target.id == "note4o") {
+            notePressed("note4o");
+        }
+        if (event.target.id == "note5o") {
+            notePressed("note5o");
+        }
+        if (event.target.id == "note6o") {
+            notePressed("note6o");
+        }
+        if (event.target.id == "note7o") {
+            notePressed("note7o");
+        }
+        if (event.target.id == "note8o") {
+            notePressed("note8o");
+        }
+        if (event.target.id == "note9o") {
+            notePressed("note9o");
+        }
+        if (event.target.id == "note10o") {
+            notePressed("note10o");
+        }
+        if (event.target.id == "note11o") {
+            notePressed("note11o");
+        }
+        if (event.target.id == "note12o") {
+            notePressed("note12o");
         }
         
         //Clicked Space for rest
-        if (event.keyCode == 32) {
-            event.preventDefault();
-            notePressed("space");
-        }
+        //if (event.keyCode == 32) {
+        //    event.preventDefault();
+        //    notePressed("space");
+        //}
+        
+        event.preventDefault();
+        return false;
     }
     
     //notePressed function to identify if its a real note or a pause i.e.Space
@@ -81,11 +103,11 @@ window.addEventListener("load", function() {
             playNote(note);
         } else {
             //Reset the design of the keyboard notes
-            var mks = document.querySelectorAll(".mKey");
+            var mks = document.querySelectorAll(".major-key");
             for (var i=0; i<mks.length; i++) {
                 mks[i].style.backgroundColor = "#fff";   
             }
-            var sks = document.querySelectorAll(".sKey");
+            var sks = document.querySelectorAll(".sharp-Key");
             for (var i=0; i<sks.length; i++) {
                 sks[i].style.backgroundColor = "#222";   
             }
@@ -100,11 +122,13 @@ window.addEventListener("load", function() {
             urls: ["audio/"+note+".mp3"],
             onplay: function() {
                 //Make the respective note appear like its clicked
-                document.querySelector("#"+note).style.backgroundColor = "#e3e3e3";
+                document.querySelector("#"+note).style.backgroundColor = "#bdc3c7";
             },
             onend: function() {
                 //Reset the respective note to appear like its not clicked
-                if (note == "cs" || note == "ds" || note == "fs" || note == "gs" || note == "as") {
+                if (note == "note2s" || note == "note2o" || note == "note4s" || note == "note4o" || 
+                    note == "note7s" || note == "note7o" || note == "note9s" || note == "note9o" ||
+                    note == "note11s" || note == "note11o") {
                     document.querySelector("#"+note).style.backgroundColor = "#222";
                 } else {
                     document.querySelector("#"+note).style.backgroundColor = "#fff";

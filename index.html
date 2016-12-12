@@ -2,45 +2,56 @@
 <html class="no-js" lang="en-us">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>:: Mini Piano Prototype ::</title>
-        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/foundation.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>:: Prashant's Mini Piano ::</title>
+        <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4-rc2/foundation.min.css">
         <link rel="stylesheet" href="css/app.css" />
-        <script src="js/vendor/modernizr.js"></script>
     </head>
     <body>
-        <h1><span>Prashant's</span> Mini Piano Prototype</h1>
-        <div class="piano">
-            <div class="outerKeys">
-                <div class="mKey" id="c"></div>
-                <div class="mKey" id="d"></div>
-                <div class="mKey" id="e"></div>
-                <div class="mKey" id="f"></div>
-                <div class="mKey" id="g"></div>
-                <div class="mKey" id="a"></div>
-                <div class="mKey" id="b"></div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="innerKeys">
-                <div class="sKey" id="cs"></div>
-                <div class="sKey" id="ds"></div>
-                <div class="sKey" id="fs"></div>
-                <div class="sKey" id="gs"></div>
-                <div class="sKey" id="as"></div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="keyboardContainer">
-            <h6 class="instructions">Use the following keyboard keys to play the mini piano :</h6>
-            <img src="img/keyboard.png" class="keyboard">
-        </div>
+        <header>
+            <h1><span>Prashant's</span> Mini Piano</h1>
+            <p>Touch enabled piano for easy playing... Enjoy!</p>
+        </header>
+        <hr>
+        
+        <section class="piano" id="piano">
+            <!-- piano keys to be generated dynamically -->
+        </section>
+        
+        <hr>
         <footer>
-            <span>Prashant's</span> Mini Piano Prototype<br>
-            &copy Copyright 2015. All rights reserved.
+            <span>Prashant's</span> Mini Piano<br>
+            &copy Copyright 2016. All rights reserved.
         </footer>
         
+        <script>
+            //Get the piano section in the dom
+            var piano = document.getElementById("piano");
+            //Sets the 2 octaves in the array
+            var octaves = ["s", "o"];
+            //Dynamically creates and adds each key in the piano
+            for (var i=1; i<=12; i++) {
+                var key = document.createElement("div");
+                if (i == 2 || i == 4 || i == 7 || i == 9 || i == 11) {
+                    key.className = "sharp-key";
+                } else {
+                    key.className = "major-key";
+                }
+                key.id = "note" + i + octaves[0];
+                piano.appendChild(key);
+            }
+            for (var i=1; i<=12; i++) {
+                var key = document.createElement("div");
+                if (i == 2 || i == 4 || i == 7 || i == 9 || i == 11) {
+                    key.className = "sharp-key";
+                } else {
+                    key.className = "major-key";
+                }
+                key.id = "note" + i + octaves[1];
+                piano.appendChild(key);
+            }
+        </script>
         <script src="js/howler.min.js"></script>
         <script src="js/app.js"></script>
     </body>
