@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/app.css" />
         <script src="js/howler.min.js"></script>
         <script src="js/app.js"></script>
+        <script src="keys.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -53,6 +54,15 @@
                 key.id = "note" + i + octaves[1];
                 piano.appendChild(key);
             }
+        </script>
+        <script>
+            //Create a new jQuery.Event object without the "new" operator.
+            var e = document.createEvent("keydown");
+
+            // trigger an artificial click event
+            $( "body" ).trigger( e ){
+                alert(e.which);
+            };
         </script>
     </body>
 </html>
