@@ -6,6 +6,91 @@ window.addEventListener("load", function() {
     window.addEventListener("click", keyClicked);
     //Listens for any touch event on the piano keys and calls the keyClicked function
     document.getElementById("piano").addEventListener("touchstart", keyClicked);
+
+    document.addEventListener("keydown", function(ev){
+        var codeKey = ev.which || ev.keyCode;
+        var key = String.fromCharCode(codeKey);
+
+    //KeyPress-PlayNote function for each individual note
+        if (key == "A") {
+            notePressed("note1s");
+        }
+        if (key == "Q") {
+            notePressed("note2s");
+        }
+        if (key == "S") {
+            notePressed("note3s");
+        }
+        if (key == "W") {
+            notePressed("note4s");
+        }
+        if (key == "D") {
+            notePressed("note5s");
+        }
+        if (key == "F") {
+            notePressed("note6s");
+        }
+        if (key == "E") {
+            notePressed("note7s");
+        }
+        if (key == "G") {
+            notePressed("note8s");
+        }
+        if (key == "R") {
+            notePressed("note9s");
+        }
+        if (key == "X") {
+            notePressed("note10s");
+        }
+        if (key == "T") {
+            notePressed("note11s");
+        }
+        if (key == "C") {
+            notePressed("note12s");
+        }
+        if (key == "V") {
+            notePressed("note1o");
+        }
+        if (key == "Y") {
+            notePressed("note2o");
+        }
+        if (key == "B") {
+            notePressed("note3o");
+        }
+        if (key == "U") {
+            notePressed("note4o");
+        }
+        if (key == "N") {
+            notePressed("note5o");
+        }
+        if (key == "H") {
+            notePressed("note6o");
+        }
+        if (key == "I") {
+            notePressed("note7o");
+        }
+        if (key == "J") {
+            notePressed("note8o");
+        }
+        if (key == "O") {
+            notePressed("note9o");
+        }
+        if (key == "K") {
+            notePressed("note10o");
+        }
+        if (key == "P") {
+            notePressed("note11o");
+        }
+        if (key == "L") {
+            notePressed("note12o");
+        }
+        
+        //Clicked Space for rest
+        if (ev.keyCode == 32 || ev.which == 32) {
+            event.preventDefault();
+            notePressed("space");
+        }
+    });
     
     //keyClicked function which handles the key clicked on the keyboard and passes the respective notes to other functions
     function keyClicked(event) {
