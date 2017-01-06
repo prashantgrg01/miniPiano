@@ -84,6 +84,12 @@ window.addEventListener("load", function() {
         if (key == "L") {
             notePressed("note12o");
         }
+        
+        //Clicked Space for rest
+        if (ev.keyCode == 32 || ev.which == 32) {
+            event.preventDefault();
+            notePressed("space");
+        }
     });
     
     //keyClicked function which handles the key clicked on the keyboard and passes the respective notes to other functions
